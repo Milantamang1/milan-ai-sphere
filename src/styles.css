@@ -46,39 +46,39 @@
 }
 
 :root {
-  --radius: 0.875rem;
+  --radius: 0.75rem;
 
-  /* Futuristic AI dark theme — deep navy/black with cyan + violet accents */
-  --background: oklch(0.13 0.04 270);
-  --foreground: oklch(0.97 0.01 250);
+  /* Senior-dev minimal: near-black background, restrained accents */
+  --background: oklch(0.13 0.004 270);
+  --foreground: oklch(0.96 0.005 250);
 
-  --card: oklch(0.18 0.05 270);
-  --card-foreground: oklch(0.97 0.01 250);
+  --card: oklch(0.16 0.005 270);
+  --card-foreground: oklch(0.96 0.005 250);
 
-  --popover: oklch(0.16 0.05 270);
-  --popover-foreground: oklch(0.97 0.01 250);
+  --popover: oklch(0.15 0.005 270);
+  --popover-foreground: oklch(0.96 0.005 250);
 
-  --primary: oklch(0.78 0.16 220);          /* cyan */
-  --primary-foreground: oklch(0.12 0.04 270);
+  --primary: oklch(0.72 0.13 215);
+  --primary-foreground: oklch(0.12 0.005 270);
 
-  --secondary: oklch(0.62 0.22 295);        /* violet */
-  --secondary-foreground: oklch(0.98 0.01 250);
+  --secondary: oklch(0.55 0.13 285);
+  --secondary-foreground: oklch(0.98 0.005 250);
 
-  --muted: oklch(0.22 0.04 270);
-  --muted-foreground: oklch(0.72 0.03 260);
+  --muted: oklch(0.2 0.005 270);
+  --muted-foreground: oklch(0.65 0.01 260);
 
-  --accent: oklch(0.65 0.2 280);            /* purple */
-  --accent-foreground: oklch(0.98 0.01 250);
+  --accent: oklch(0.6 0.12 270);
+  --accent-foreground: oklch(0.98 0.005 250);
 
-  --destructive: oklch(0.65 0.22 25);
+  --destructive: oklch(0.62 0.2 25);
   --destructive-foreground: oklch(0.98 0 0);
 
-  --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 12%);
-  --ring: oklch(0.78 0.16 220);
+  --border: oklch(1 0 0 / 7%);
+  --input: oklch(1 0 0 / 9%);
+  --ring: oklch(0.72 0.13 215);
 
-  --cyan-glow: oklch(0.82 0.18 215);
-  --violet-glow: oklch(0.65 0.24 295);
+  --cyan-glow: oklch(0.78 0.14 215);
+  --violet-glow: oklch(0.6 0.16 290);
 }
 
 @keyframes float {
@@ -159,9 +159,11 @@
     font-family: var(--font-sans);
     -webkit-font-smoothing: antialiased;
     background-image:
-      radial-gradient(ellipse 80% 50% at 50% -10%, oklch(0.4 0.18 270 / 0.35), transparent),
-      radial-gradient(ellipse 60% 50% at 100% 20%, oklch(0.45 0.2 215 / 0.18), transparent),
-      radial-gradient(ellipse 60% 50% at 0% 60%, oklch(0.5 0.22 295 / 0.18), transparent);
+      radial-gradient(ellipse 70% 40% at 50% -10%, oklch(0.4 0.1 220 / 0.12), transparent 70%),
+      radial-gradient(ellipse 50% 40% at 100% 100%, oklch(0.45 0.12 290 / 0.08), transparent 70%),
+      linear-gradient(oklch(1 0 0 / 0.018) 1px, transparent 1px),
+      linear-gradient(90deg, oklch(1 0 0 / 0.018) 1px, transparent 1px);
+    background-size: auto, auto, 56px 56px, 56px 56px;
     background-attachment: fixed;
   }
   h1, h2, h3, h4 {
