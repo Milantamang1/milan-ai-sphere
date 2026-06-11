@@ -4,7 +4,7 @@ import {
   Mail, Phone, MapPin, Github, Linkedin, Download, ArrowRight, Send,
   Code2, Brain, Eye, Database, Wrench, Layout, Sparkles, Cpu, FileSearch,
   Scan, Gauge, Search, MessagesSquare, Activity, LineChart, UtensilsCrossed,
-  GraduationCap, Cloud, Bot, Workflow, Camera, Menu, X, ExternalLink,
+  GraduationCap, Workflow, Bot, Camera, Menu, X, ExternalLink,
 } from "lucide-react";
 import milanImg from "@/assets/milan.jpg";
 
