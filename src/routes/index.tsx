@@ -469,33 +469,8 @@ function Education() {
   );
 }
 
-/* -------------------------------- Interests ------------------------------ */
-function Interests() {
-  const items = [
-    { icon: Sparkles, label: "Generative AI" },
-    { icon: FileSearch, label: "Retrieval-Augmented Generation" },
-    { icon: Brain, label: "NLP" },
-    { icon: Eye, label: "Computer Vision" },
-    { icon: Cloud, label: "Cloud Computing" },
-    { icon: Cpu, label: "Scalable System Design" },
-    { icon: Bot, label: "Intelligent Automation" },
-    { icon: Camera, label: "Cinematography" },
-  ];
-  return (
-    <Section id="interests" eyebrow="Interests" title={<>What I'm <span className="text-gradient">curious about</span></>}>
-      <div className="grid gap-4 sm:grid-cols-2 md:grid-cols-4">
-        {items.map(({ icon: Icon, label }) => (
-          <div key={label} className="glass group flex flex-col items-center gap-3 rounded-2xl p-5 text-center transition-all hover:-translate-y-1 hover:border-primary/40">
-            <span className="grid h-12 w-12 place-items-center rounded-xl bg-gradient-to-br from-primary/20 to-secondary/20 text-primary transition-transform group-hover:scale-110">
-              <Icon className="h-5 w-5" />
-            </span>
-            <p className="text-sm font-medium">{label}</p>
-          </div>
-        ))}
-      </div>
-    </Section>
-  );
-}
+
+
 
 /* --------------------------------- Contact ------------------------------- */
 function Contact() {
