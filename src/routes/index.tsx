@@ -51,14 +51,25 @@ function Portfolio() {
 /* ------------------------------- Background ------------------------------- */
 function BackgroundFX() {
   return (
-    <div aria-hidden className="pointer-events-none fixed inset-0 -z-10">
-      <div className="absolute inset-0 bg-grid opacity-40 [mask-image:radial-gradient(ellipse_at_center,black,transparent_75%)]" />
-      <div className="absolute -top-40 left-1/2 h-[40rem] w-[40rem] -translate-x-1/2 rounded-full bg-primary/20 blur-3xl" />
-      <div className="absolute top-1/3 -left-32 h-[30rem] w-[30rem] rounded-full bg-secondary/20 blur-3xl" />
-      <div className="absolute bottom-0 right-0 h-[36rem] w-[36rem] rounded-full bg-accent/15 blur-3xl" />
+    <div aria-hidden className="pointer-events-none fixed inset-0 -z-10 overflow-hidden">
+      <div className="absolute inset-0 bg-grid opacity-30 [mask-image:radial-gradient(ellipse_at_center,black_30%,transparent_80%)]" />
+      <div
+        className="absolute -top-[20rem] left-1/2 h-[45rem] w-[45rem] -translate-x-1/2 rounded-full opacity-60 blur-[120px]"
+        style={{ background: "radial-gradient(circle, oklch(0.55 0.18 220 / 0.35), transparent 70%)", animation: "aurora-drift 18s ease-in-out infinite" }}
+      />
+      <div
+        className="absolute top-[30%] -left-40 h-[34rem] w-[34rem] rounded-full opacity-50 blur-[100px]"
+        style={{ background: "radial-gradient(circle, oklch(0.55 0.18 290 / 0.3), transparent 70%)", animation: "aurora-drift 22s ease-in-out infinite reverse" }}
+      />
+      <div
+        className="absolute bottom-[-10rem] right-[-10rem] h-[38rem] w-[38rem] rounded-full opacity-40 blur-[110px]"
+        style={{ background: "radial-gradient(circle, oklch(0.6 0.16 250 / 0.25), transparent 70%)", animation: "aurora-drift 26s ease-in-out infinite" }}
+      />
+      <div className="absolute inset-0 bg-noise opacity-[0.025] mix-blend-overlay" />
     </div>
   );
 }
+
 
 /* --------------------------------- Navbar -------------------------------- */
 function Navbar() {
