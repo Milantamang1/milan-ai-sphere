@@ -40,13 +40,13 @@ function Portfolio() {
         <Projects />
         <Experience />
         <Education />
-        <Interests />
         <Contact />
       </main>
       <Footer />
     </div>
   );
 }
+
 
 /* ------------------------------- Background ------------------------------- */
 function BackgroundFX() {
