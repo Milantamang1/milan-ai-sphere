@@ -4,7 +4,7 @@ import {
   Mail, Phone, MapPin, Github, Linkedin, Download, ArrowRight, Send,
   Code2, Brain, Eye, Database, Wrench, Layout, Sparkles, Cpu, FileSearch,
   Scan, Gauge, Search, MessagesSquare, Activity, LineChart, UtensilsCrossed,
-  GraduationCap, Cloud, Bot, Workflow, Camera, Menu, X, ExternalLink,
+  GraduationCap, Workflow, Bot, Camera, Menu, X, ExternalLink,
 } from "lucide-react";
 import milanImg from "@/assets/milan.jpg";
 
@@ -40,7 +40,6 @@ function Portfolio() {
         <Projects />
         <Experience />
         <Education />
-        <Interests />
         <Contact />
       </main>
       <Footer />
@@ -48,17 +47,29 @@ function Portfolio() {
   );
 }
 
+
 /* ------------------------------- Background ------------------------------- */
 function BackgroundFX() {
   return (
-    <div aria-hidden className="pointer-events-none fixed inset-0 -z-10">
-      <div className="absolute inset-0 bg-grid opacity-40 [mask-image:radial-gradient(ellipse_at_center,black,transparent_75%)]" />
-      <div className="absolute -top-40 left-1/2 h-[40rem] w-[40rem] -translate-x-1/2 rounded-full bg-primary/20 blur-3xl" />
-      <div className="absolute top-1/3 -left-32 h-[30rem] w-[30rem] rounded-full bg-secondary/20 blur-3xl" />
-      <div className="absolute bottom-0 right-0 h-[36rem] w-[36rem] rounded-full bg-accent/15 blur-3xl" />
+    <div aria-hidden className="pointer-events-none fixed inset-0 -z-10 overflow-hidden">
+      <div className="absolute inset-0 bg-grid opacity-30 [mask-image:radial-gradient(ellipse_at_center,black_30%,transparent_80%)]" />
+      <div
+        className="absolute -top-[20rem] left-1/2 h-[45rem] w-[45rem] -translate-x-1/2 rounded-full opacity-60 blur-[120px]"
+        style={{ background: "radial-gradient(circle, oklch(0.55 0.18 220 / 0.35), transparent 70%)", animation: "aurora-drift 18s ease-in-out infinite" }}
+      />
+      <div
+        className="absolute top-[30%] -left-40 h-[34rem] w-[34rem] rounded-full opacity-50 blur-[100px]"
+        style={{ background: "radial-gradient(circle, oklch(0.55 0.18 290 / 0.3), transparent 70%)", animation: "aurora-drift 22s ease-in-out infinite reverse" }}
+      />
+      <div
+        className="absolute bottom-[-10rem] right-[-10rem] h-[38rem] w-[38rem] rounded-full opacity-40 blur-[110px]"
+        style={{ background: "radial-gradient(circle, oklch(0.6 0.16 250 / 0.25), transparent 70%)", animation: "aurora-drift 26s ease-in-out infinite" }}
+      />
+      <div className="absolute inset-0 bg-noise opacity-[0.025] mix-blend-overlay" />
     </div>
   );
 }
+
 
 /* --------------------------------- Navbar -------------------------------- */
 function Navbar() {
@@ -232,43 +243,30 @@ function About() {
   ];
   return (
     <Section id="about" eyebrow="About" title={<>Crafting AI that <span className="text-gradient">solves real problems</span></>}>
-      <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
-        <div className="relative mx-auto w-full max-w-sm">
-          <div className="absolute -inset-4 rounded-3xl bg-gradient-to-br from-primary/25 to-secondary/25 blur-2xl" />
-          <div className="glow-border relative overflow-hidden rounded-3xl glass-strong p-2">
-            <img src={milanImg} alt="Milan Tamang" loading="lazy" width={1024} height={1024} className="h-full w-full rounded-2xl object-cover" />
-          </div>
-          <div className="mt-4 rounded-2xl glass p-4 text-center">
-            <p className="font-display text-lg font-semibold">Milan Tamang</p>
-            <p className="text-sm text-muted-foreground">AI Engineer · Kathmandu, Nepal</p>
-          </div>
-        </div>
+      <div className="mx-auto max-w-3xl text-center">
+        <p className="text-base leading-relaxed text-muted-foreground md:text-lg">
+          I'm an AI Engineer with hands-on experience designing and deploying intelligent
+          systems for real-world problems — computer vision, OCR, NLP, semantic search,
+          document automation, and backend AI APIs. My work spans invoice detection,
+          digital meter reading, multilingual chatbot research, and predictive forecasting.
+        </p>
+      </div>
 
-        <div>
-          <p className="text-base leading-relaxed text-muted-foreground md:text-lg">
-            I am an AI Engineer with hands-on experience designing and deploying intelligent
-            AI solutions for real-world problems. I specialize in computer vision, OCR
-            systems, NLP, semantic search, document automation, and backend AI integration.
-            My work spans invoice detection, document extraction, digital meter reading,
-            semantic search engines, multilingual chatbot research, and predictive
-            forecasting systems.
-          </p>
-
-          <div className="mt-8 grid grid-cols-2 gap-3 sm:grid-cols-3">
-            {highlights.map(({ icon: Icon, label }) => (
-              <div key={label} className="glass group rounded-xl p-4 transition-all hover:border-primary/40 hover:-translate-y-0.5">
-                <div className="inline-flex h-9 w-9 items-center justify-center rounded-lg bg-gradient-to-br from-primary/20 to-secondary/20 text-primary">
-                  <Icon className="h-4 w-4" />
-                </div>
-                <p className="mt-3 text-sm font-medium">{label}</p>
-              </div>
-            ))}
+      <div className="mt-12 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-5">
+        {highlights.map(({ icon: Icon, label }) => (
+          <div key={label} className="glass group relative overflow-hidden rounded-2xl p-5 transition-all duration-300 hover:-translate-y-1 hover:border-primary/40">
+            <div className="absolute inset-x-0 -top-px h-px divider-glow opacity-0 transition-opacity group-hover:opacity-100" />
+            <div className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-primary/20 to-secondary/20 text-primary transition-transform group-hover:scale-110">
+              <Icon className="h-4 w-4" />
+            </div>
+            <p className="mt-3 text-sm font-medium">{label}</p>
           </div>
-        </div>
+        ))}
       </div>
     </Section>
   );
 }
+
 
 /* --------------------------------- Skills -------------------------------- */
 function Skills() {
@@ -471,33 +469,8 @@ function Education() {
   );
 }
 
-/* -------------------------------- Interests ------------------------------ */
-function Interests() {
-  const items = [
-    { icon: Sparkles, label: "Generative AI" },
-    { icon: FileSearch, label: "Retrieval-Augmented Generation" },
-    { icon: Brain, label: "NLP" },
-    { icon: Eye, label: "Computer Vision" },
-    { icon: Cloud, label: "Cloud Computing" },
-    { icon: Cpu, label: "Scalable System Design" },
-    { icon: Bot, label: "Intelligent Automation" },
-    { icon: Camera, label: "Cinematography" },
-  ];
-  return (
-    <Section id="interests" eyebrow="Interests" title={<>What I'm <span className="text-gradient">curious about</span></>}>
-      <div className="grid gap-4 sm:grid-cols-2 md:grid-cols-4">
-        {items.map(({ icon: Icon, label }) => (
-          <div key={label} className="glass group flex flex-col items-center gap-3 rounded-2xl p-5 text-center transition-all hover:-translate-y-1 hover:border-primary/40">
-            <span className="grid h-12 w-12 place-items-center rounded-xl bg-gradient-to-br from-primary/20 to-secondary/20 text-primary transition-transform group-hover:scale-110">
-              <Icon className="h-5 w-5" />
-            </span>
-            <p className="text-sm font-medium">{label}</p>
-          </div>
-        ))}
-      </div>
-    </Section>
-  );
-}
+
+
 
 /* --------------------------------- Contact ------------------------------- */
 function Contact() {
@@ -575,14 +548,31 @@ function ContactRow({ icon: Icon, label, value, href }: { icon: typeof Mail; lab
 /* --------------------------------- Footer -------------------------------- */
 function Footer() {
   return (
-    <footer className="relative mt-20 border-t border-white/10 py-10">
-      <div className="mx-auto max-w-6xl px-4 text-center">
-        <p className="font-display text-base">
-          <span className="text-gradient font-bold">Milan.dev</span>
-        </p>
-        <p className="mt-2 text-sm text-muted-foreground">
-          © 2026 Milan Tamang. Built with passion for AI and innovation.
-        </p>
+    <footer className="relative mt-24">
+      <div className="mx-auto max-w-6xl px-4">
+        <div className="h-px w-full divider-glow opacity-60" />
+        <div className="flex flex-col items-center justify-between gap-4 py-10 sm:flex-row">
+          <a href="#home" className="flex items-center gap-2 font-display text-base font-bold">
+            <span className="grid h-7 w-7 place-items-center rounded-lg bg-gradient-to-br from-primary to-secondary text-primary-foreground">
+              <Sparkles className="h-3.5 w-3.5" />
+            </span>
+            <span className="text-gradient">Milan.dev</span>
+          </a>
+          <p className="text-xs text-muted-foreground">
+            © 2026 Milan Tamang · Designed & engineered in Kathmandu
+          </p>
+          <div className="flex items-center gap-2">
+            <a href="https://github.com/Milantamang1" target="_blank" rel="noopener noreferrer" aria-label="GitHub" className="grid h-9 w-9 place-items-center rounded-lg glass transition-all hover:border-primary/40 hover:text-primary">
+              <Github className="h-4 w-4" />
+            </a>
+            <a href="https://www.linkedin.com/in/milan-tamang-7449a620a/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="grid h-9 w-9 place-items-center rounded-lg glass transition-all hover:border-primary/40 hover:text-primary">
+              <Linkedin className="h-4 w-4" />
+            </a>
+            <a href="mailto:meelantamang0@gmail.com" aria-label="Email" className="grid h-9 w-9 place-items-center rounded-lg glass transition-all hover:border-primary/40 hover:text-primary">
+              <Mail className="h-4 w-4" />
+            </a>
+          </div>
+        </div>
       </div>
     </footer>
   );
@@ -603,18 +593,21 @@ function Section({ id, eyebrow, title, children }: { id: string; eyebrow: string
     return () => obs.disconnect();
   }, []);
   return (
-    <section ref={ref} id={id} className="scroll-mt-24 py-20 md:py-28">
+    <section ref={ref} id={id} className="scroll-mt-24 py-24 md:py-32">
       <div className={`mx-auto max-w-6xl px-4 ${visible ? "animate-fade-up" : "opacity-0"}`}>
-        <div className="mb-12 text-center">
-          <span className="inline-flex items-center gap-2 rounded-full glass px-3 py-1 text-xs font-medium uppercase tracking-[0.2em] text-primary">
+        <div className="mb-14 flex flex-col items-center text-center">
+          <span className="inline-flex items-center gap-2 rounded-full glass px-3 py-1 text-[10px] font-medium uppercase tracking-[0.25em] text-primary">
+            <span className="h-1 w-1 rounded-full bg-primary shadow-[0_0_8px_currentColor]" />
             {eyebrow}
           </span>
-          <h2 className="mt-4 font-display text-3xl font-bold leading-tight md:text-5xl">
+          <h2 className="mt-5 font-display text-3xl font-bold leading-[1.1] md:text-5xl">
             {title}
           </h2>
+          <div className="mt-6 h-px w-24 divider-glow" />
         </div>
         {children}
       </div>
     </section>
   );
 }
+
