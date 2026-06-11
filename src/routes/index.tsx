@@ -548,14 +548,31 @@ function ContactRow({ icon: Icon, label, value, href }: { icon: typeof Mail; lab
 /* --------------------------------- Footer -------------------------------- */
 function Footer() {
   return (
-    <footer className="relative mt-20 border-t border-white/10 py-10">
-      <div className="mx-auto max-w-6xl px-4 text-center">
-        <p className="font-display text-base">
-          <span className="text-gradient font-bold">Milan.dev</span>
-        </p>
-        <p className="mt-2 text-sm text-muted-foreground">
-          © 2026 Milan Tamang. Built with passion for AI and innovation.
-        </p>
+    <footer className="relative mt-24">
+      <div className="mx-auto max-w-6xl px-4">
+        <div className="h-px w-full divider-glow opacity-60" />
+        <div className="flex flex-col items-center justify-between gap-4 py-10 sm:flex-row">
+          <a href="#home" className="flex items-center gap-2 font-display text-base font-bold">
+            <span className="grid h-7 w-7 place-items-center rounded-lg bg-gradient-to-br from-primary to-secondary text-primary-foreground">
+              <Sparkles className="h-3.5 w-3.5" />
+            </span>
+            <span className="text-gradient">Milan.dev</span>
+          </a>
+          <p className="text-xs text-muted-foreground">
+            © 2026 Milan Tamang · Designed & engineered in Kathmandu
+          </p>
+          <div className="flex items-center gap-2">
+            <a href="https://github.com/Milantamang1" target="_blank" rel="noopener noreferrer" aria-label="GitHub" className="grid h-9 w-9 place-items-center rounded-lg glass transition-all hover:border-primary/40 hover:text-primary">
+              <Github className="h-4 w-4" />
+            </a>
+            <a href="https://www.linkedin.com/in/milan-tamang-7449a620a/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="grid h-9 w-9 place-items-center rounded-lg glass transition-all hover:border-primary/40 hover:text-primary">
+              <Linkedin className="h-4 w-4" />
+            </a>
+            <a href="mailto:meelantamang0@gmail.com" aria-label="Email" className="grid h-9 w-9 place-items-center rounded-lg glass transition-all hover:border-primary/40 hover:text-primary">
+              <Mail className="h-4 w-4" />
+            </a>
+          </div>
+        </div>
       </div>
     </footer>
   );
@@ -576,18 +593,21 @@ function Section({ id, eyebrow, title, children }: { id: string; eyebrow: string
     return () => obs.disconnect();
   }, []);
   return (
-    <section ref={ref} id={id} className="scroll-mt-24 py-20 md:py-28">
+    <section ref={ref} id={id} className="scroll-mt-24 py-24 md:py-32">
       <div className={`mx-auto max-w-6xl px-4 ${visible ? "animate-fade-up" : "opacity-0"}`}>
-        <div className="mb-12 text-center">
-          <span className="inline-flex items-center gap-2 rounded-full glass px-3 py-1 text-xs font-medium uppercase tracking-[0.2em] text-primary">
+        <div className="mb-14 flex flex-col items-center text-center">
+          <span className="inline-flex items-center gap-2 rounded-full glass px-3 py-1 text-[10px] font-medium uppercase tracking-[0.25em] text-primary">
+            <span className="h-1 w-1 rounded-full bg-primary shadow-[0_0_8px_currentColor]" />
             {eyebrow}
           </span>
-          <h2 className="mt-4 font-display text-3xl font-bold leading-tight md:text-5xl">
+          <h2 className="mt-5 font-display text-3xl font-bold leading-[1.1] md:text-5xl">
             {title}
           </h2>
+          <div className="mt-6 h-px w-24 divider-glow" />
         </div>
         {children}
       </div>
     </section>
   );
 }
+
