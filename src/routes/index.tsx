@@ -243,43 +243,30 @@ function About() {
   ];
   return (
     <Section id="about" eyebrow="About" title={<>Crafting AI that <span className="text-gradient">solves real problems</span></>}>
-      <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
-        <div className="relative mx-auto w-full max-w-sm">
-          <div className="absolute -inset-4 rounded-3xl bg-gradient-to-br from-primary/25 to-secondary/25 blur-2xl" />
-          <div className="glow-border relative overflow-hidden rounded-3xl glass-strong p-2">
-            <img src={milanImg} alt="Milan Tamang" loading="lazy" width={1024} height={1024} className="h-full w-full rounded-2xl object-cover" />
-          </div>
-          <div className="mt-4 rounded-2xl glass p-4 text-center">
-            <p className="font-display text-lg font-semibold">Milan Tamang</p>
-            <p className="text-sm text-muted-foreground">AI Engineer · Kathmandu, Nepal</p>
-          </div>
-        </div>
+      <div className="mx-auto max-w-3xl text-center">
+        <p className="text-base leading-relaxed text-muted-foreground md:text-lg">
+          I'm an AI Engineer with hands-on experience designing and deploying intelligent
+          systems for real-world problems — computer vision, OCR, NLP, semantic search,
+          document automation, and backend AI APIs. My work spans invoice detection,
+          digital meter reading, multilingual chatbot research, and predictive forecasting.
+        </p>
+      </div>
 
-        <div>
-          <p className="text-base leading-relaxed text-muted-foreground md:text-lg">
-            I am an AI Engineer with hands-on experience designing and deploying intelligent
-            AI solutions for real-world problems. I specialize in computer vision, OCR
-            systems, NLP, semantic search, document automation, and backend AI integration.
-            My work spans invoice detection, document extraction, digital meter reading,
-            semantic search engines, multilingual chatbot research, and predictive
-            forecasting systems.
-          </p>
-
-          <div className="mt-8 grid grid-cols-2 gap-3 sm:grid-cols-3">
-            {highlights.map(({ icon: Icon, label }) => (
-              <div key={label} className="glass group rounded-xl p-4 transition-all hover:border-primary/40 hover:-translate-y-0.5">
-                <div className="inline-flex h-9 w-9 items-center justify-center rounded-lg bg-gradient-to-br from-primary/20 to-secondary/20 text-primary">
-                  <Icon className="h-4 w-4" />
-                </div>
-                <p className="mt-3 text-sm font-medium">{label}</p>
-              </div>
-            ))}
+      <div className="mt-12 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-5">
+        {highlights.map(({ icon: Icon, label }) => (
+          <div key={label} className="glass group relative overflow-hidden rounded-2xl p-5 transition-all duration-300 hover:-translate-y-1 hover:border-primary/40">
+            <div className="absolute inset-x-0 -top-px h-px divider-glow opacity-0 transition-opacity group-hover:opacity-100" />
+            <div className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-primary/20 to-secondary/20 text-primary transition-transform group-hover:scale-110">
+              <Icon className="h-4 w-4" />
+            </div>
+            <p className="mt-3 text-sm font-medium">{label}</p>
           </div>
-        </div>
+        ))}
       </div>
     </Section>
   );
 }
+
 
 /* --------------------------------- Skills -------------------------------- */
 function Skills() {
