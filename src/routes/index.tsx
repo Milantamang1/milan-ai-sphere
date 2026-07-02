@@ -8,6 +8,8 @@ import {
 } from "lucide-react";
 import milanImg from "@/assets/milan.jpg";
 
+const cvUrl = `${import.meta.env.BASE_URL}UpdatedCV.pdf`;
+
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
@@ -176,7 +178,7 @@ function Hero() {
             <a href="#projects" className="group inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-primary to-secondary px-5 py-3 text-sm font-semibold text-primary-foreground shadow-lg shadow-primary/30 transition-transform hover:scale-[1.03]">
               View Projects <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
             </a>
-            <a href="#" onClick={(e) => e.preventDefault()} className="inline-flex items-center gap-2 rounded-xl glass-strong px-5 py-3 text-sm font-semibold text-foreground transition-all hover:border-primary/40">
+            <a href={cvUrl} download className="inline-flex items-center gap-2 rounded-xl glass-strong px-5 py-3 text-sm font-semibold text-foreground transition-all hover:border-primary/40">
               <Download className="h-4 w-4" /> Download CV
             </a>
             <a href="#contact" className="inline-flex items-center gap-2 rounded-xl px-5 py-3 text-sm font-semibold text-foreground/80 transition-colors hover:text-foreground">
