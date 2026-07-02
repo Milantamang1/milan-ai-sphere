@@ -84,15 +84,13 @@ function Navbar() {
 
   return (
     <header
-      className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
-        scrolled ? "py-3" : "py-5"
-      }`}
+      className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${scrolled ? "py-3" : "py-5"
+        }`}
     >
       <div className="mx-auto max-w-6xl px-4">
         <div
-          className={`flex items-center justify-between rounded-2xl px-5 py-3 transition-all ${
-            scrolled ? "glass-strong shadow-lg shadow-primary/5" : "glass"
-          }`}
+          className={`flex items-center justify-between rounded-2xl px-5 py-3 transition-all ${scrolled ? "glass-strong shadow-lg shadow-primary/5" : "glass"
+            }`}
         >
           <a href="#home" className="flex items-center gap-2 font-display text-lg font-bold">
             <span className="grid h-8 w-8 place-items-center rounded-lg bg-gradient-to-br from-primary to-secondary text-primary-foreground">
@@ -205,11 +203,11 @@ function Hero() {
         <div className="relative mx-auto w-full max-w-[23rem] group">
           {/* Animated Ambient Backdrop Glow */}
           <div className="absolute -inset-6 rounded-[2.5rem] bg-gradient-to-br from-primary/25 via-secondary/15 to-accent/20 blur-3xl opacity-80 transition-all duration-700 group-hover:scale-105" />
-          
+
           <div className="relative animate-float-slow">
             {/* 3D Glass Frame */}
             <div className="glow-border relative overflow-hidden rounded-[2.2rem] glass-strong p-2.5 shadow-2xl transition-all duration-700 ease-out group-hover:[transform:perspective(1000px)_rotateY(6deg)_rotateX(-3deg)] group-hover:shadow-[0_20px_50px_rgba(var(--primary),0.15)] bg-black/40">
-              
+
               {/* Image Container */}
               <div className="relative aspect-[3/4] overflow-hidden rounded-[1.8rem] bg-black/50">
                 <img
@@ -231,7 +229,7 @@ function Hero() {
                 <div className="absolute top-4 right-4 h-3.5 w-3.5 border-t-2 border-r-2 border-primary/45 rounded-tr transition-all duration-300 group-hover:scale-110" />
                 <div className="absolute bottom-4 left-4 h-3.5 w-3.5 border-b-2 border-l-2 border-primary/45 rounded-bl transition-all duration-300 group-hover:scale-110" />
                 <div className="absolute bottom-4 right-4 h-3.5 w-3.5 border-b-2 border-r-2 border-primary/45 rounded-br transition-all duration-300 group-hover:scale-110" />
-                
+
                 {/* Vignette Shadow Overlay */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none" />
               </div>
@@ -537,17 +535,16 @@ function OCRVisualizer() {
           />
 
           <div className="border-b border-white/10 pb-2 flex justify-between items-center">
-            <span className="font-bold text-[9px] tracking-wider text-muted-foreground">KATHA DIGITAL INVOICE</span>
+            <span className="font-bold text-[9px] tracking-wider text-muted-foreground">Nepal Oil Corporation INVOICE</span>
             <span className="text-[8px] text-muted-foreground">#CD-2026</span>
           </div>
 
           <div className="space-y-3 my-3">
             <div
-              className={`p-1.5 rounded border transition-all duration-150 relative ${
-                isDateActive
+              className={`p-1.5 rounded border transition-all duration-150 relative ${isDateActive
                   ? "border-emerald-500/50 bg-emerald-500/5 shadow-[0_0_8px_rgba(16,185,129,0.05)]"
                   : "border-transparent bg-transparent"
-              }`}
+                }`}
             >
               <div className="flex justify-between text-[8px] text-muted-foreground">
                 <span>INVOICE DATE</span>
@@ -557,11 +554,10 @@ function OCRVisualizer() {
             </div>
 
             <div
-              className={`p-1.5 rounded border transition-all duration-150 relative ${
-                isPremiumActive
+              className={`p-1.5 rounded border transition-all duration-150 relative ${isPremiumActive
                   ? "border-primary/50 bg-primary/5 shadow-[0_0_8px_rgba(var(--primary),0.05)]"
                   : "border-transparent bg-transparent"
-              }`}
+                }`}
             >
               <div className="flex justify-between text-[8px] text-muted-foreground">
                 <span>PREMIUM AMOUNT</span>
@@ -571,11 +567,10 @@ function OCRVisualizer() {
             </div>
 
             <div
-              className={`p-1.5 rounded border transition-all duration-150 relative ${
-                isTotalActive
+              className={`p-1.5 rounded border transition-all duration-150 relative ${isTotalActive
                   ? "border-secondary/50 bg-secondary/5 shadow-[0_0_8px_rgba(var(--secondary),0.05)]"
                   : "border-transparent bg-transparent"
-              }`}
+                }`}
             >
               <div className="flex justify-between text-[8px] text-muted-foreground">
                 <span>TOTAL DUE</span>
@@ -794,7 +789,7 @@ function RAGVisualizer() {
         {/* Left Side: Vector Space Map */}
         <div className="w-full md:w-[130px] h-[100px] md:h-auto bg-black/40 border border-white/5 rounded-xl p-2 relative overflow-hidden flex items-center justify-center">
           <span className="absolute top-1.5 left-2 text-[7px] uppercase tracking-wider text-muted-foreground/60 font-sans">Embedding Space</span>
-          
+
           <svg className="w-full h-full max-h-[140px]" viewBox="0 0 100 100">
             <line x1="0" y1="50" x2="100" y2="50" className="stroke-white/5 stroke-[0.5px]" />
             <line x1="50" y1="0" x2="50" y2="100" className="stroke-white/5 stroke-[0.5px]" />
@@ -823,7 +818,7 @@ function RAGVisualizer() {
             {step === 2 && (
               <circle cx="60" cy="60" r="2.5" className="fill-secondary animate-pulse" />
             )}
-            
+
             {step >= 3 && (
               <>
                 <circle cx="60" cy="60" r="1" className="stroke-primary fill-none stroke-2 origin-center" style={{ animation: "ripple 1.5s ease-out infinite" }} />
@@ -882,7 +877,7 @@ function AIWorkVisualizer() {
   return (
     <div className="glass-strong relative min-h-[380px] overflow-hidden rounded-2xl border border-white/10 flex flex-col w-full">
       <div className="absolute -inset-10 bg-gradient-to-br from-primary/10 via-transparent to-secondary/15 opacity-60 blur-3xl pointer-events-none" />
-      
+
       {/* Visualizer header */}
       <div className="flex border-b border-white/10 bg-black/30 p-3 justify-between items-center relative z-10">
         <div className="flex gap-1.5">
@@ -895,11 +890,10 @@ function AIWorkVisualizer() {
             <button
               key={tab}
               onClick={() => setActiveTab(tab)}
-              className={`rounded-lg px-2.5 py-1 text-[10px] font-mono font-medium transition-all ${
-                activeTab === tab
+              className={`rounded-lg px-2.5 py-1 text-[10px] font-mono font-medium transition-all ${activeTab === tab
                   ? "bg-primary/10 text-primary border border-primary/20"
                   : "text-muted-foreground hover:bg-white/5 hover:text-foreground border border-transparent"
-              }`}
+                }`}
             >
               {tab === "ocr" && "OCR_Scanner.py"}
               {tab === "network" && "neural_net.fit"}
