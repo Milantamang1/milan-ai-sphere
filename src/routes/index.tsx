@@ -8,7 +8,7 @@ import {
 } from "lucide-react";
 import milanImg from "@/assets/milan.jpg";
 
-const cvUrl = `${import.meta.env.BASE_URL}UpdatedCV.pdf`;
+const cvUrl = `${import.meta.env.BASE_URL}MIlanCV.pdf`;
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -301,16 +301,16 @@ function About() {
 /* --------------------------------- Skills -------------------------------- */
 function Skills() {
   const groups = [
-    { icon: Code2, title: "Programming", items: ["Python", "JavaScript", "SQL", "C/C++"] },
+    { icon: Code2, title: "Programming Languages", items: ["Python", "JavaScript", "SQL", "C", "C++"] },
     { icon: Workflow, title: "Frameworks & APIs", items: ["Django", "Flask", "REST APIs"] },
-    { icon: Brain, title: "AI / ML", items: ["YOLOv8", "SentenceTransformers", "LSTM", "BiLSTM", "OCR", "NLP", "Semantic Search", "RAG"] },
-    { icon: Eye, title: "Computer Vision", items: ["OpenCV", "PaddleOCR", "EasyOCR", "Pillow"] },
-    { icon: Layout, title: "Frontend", items: ["HTML", "CSS", "JavaScript", "React.js", "Bootstrap"] },
+    { icon: Brain, title: "AI & Machine Learning", items: ["YOLOv8", "LSTM", "BiLSTM", "SentenceTransformers", "FAISS", "OCR", "NLP", "Semantic Search", "RAG"] },
+    { icon: Eye, title: "Computer Vision", items: ["OpenCV", "PaddleOCR", "EasyOCR", "Pillow", "Image Preprocessing"] },
+    { icon: Layout, title: "Frontend", items: ["HTML", "CSS", "JavaScript", "React.js", "Bootstrap", "Next.js"] },
     { icon: Database, title: "Databases", items: ["PostgreSQL", "MongoDB", "MySQL"] },
     { icon: Wrench, title: "Tools", items: ["Git", "Docker", "VS Code", "Conda", "Google Colab"] },
   ];
   return (
-    <Section id="skills" eyebrow="Skills" title={<>The stack I use to <span className="text-gradient">ship AI</span></>}>
+    <Section id="skills" eyebrow="Skills" title={<>Technical <span className="text-gradient">expertise</span></>}>
       <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
         {groups.map(({ icon: Icon, title, items }) => (
           <div key={title} className="group glass relative overflow-hidden rounded-2xl p-6 transition-all hover:-translate-y-1 hover:border-primary/40">
@@ -337,65 +337,57 @@ function Skills() {
 function Projects() {
   const projects = [
     {
-      title: "AI-Powered Insurance Invoice Detection",
-      desc: "Invoice extraction system using YOLOv8 + OCR to capture VAT, premium, total amount, invoice number, date, and stamp duty.",
-      tech: ["YOLOv8", "OCR", "OpenCV", "Flask", "PyTorch"],
-      impact: "94.6% mAP@50 · 91.5% accuracy",
-      icon: FileSearch,
-    },
-    {
-      title: "NOC Document Data Extraction",
-      desc: "Structured data extraction from noisy scanned documents using OCR and computer vision.",
-      tech: ["YOLOv8", "EasyOCR", "OpenCV", "Flask"],
-      impact: "96.3% mAP@50 · 94.2% accuracy",
-      icon: Scan,
-    },
-    {
-      title: "Fuel Pump Digital Meter Reading",
-      desc: "Real-time digit detection for fuel pump meters with CLAHE and gamma correction for glare resistance.",
-      tech: ["YOLOv8", "OpenCV", "Flask"],
-      impact: "99.5% accuracy",
-      icon: Gauge,
-    },
-    {
-      title: "AI-Powered Semantic Search Engine",
-      desc: "Hybrid semantic search combining SentenceTransformers and FAISS with keyword + semantic ranking.",
-      tech: ["FAISS", "NLP", "scikit-learn", "SentenceTransformers"],
-      impact: "~92% retrieval accuracy",
-      icon: Search,
-    },
-    {
-      title: "AI Multilingual Chatbot — RAG Research",
-      desc: "Chatbot supporting Nepali, Roman Nepali and English, exploring Retrieval-Augmented Generation.",
-      tech: ["SentenceTransformers", "Flask", "FAISS"],
-      impact: "94% Top-1 accuracy",
-      icon: MessagesSquare,
-    },
-    {
       title: "Predictive Water Level System",
-      desc: "LSTM / BiLSTM-based forecasting with a Django web dashboard for live monitoring.",
-      tech: ["Django", "TensorFlow", "PostgreSQL"],
-      impact: "Time-series forecasting",
+      category: "Major Project",
+      desc: "Water level forecasting system using LSTM & BiLSTM models, built with a Django web application and real-time dashboard for live monitoring and prediction.",
+      tech: ["Django", "TensorFlow", "PostgreSQL", "Python", "Machine Learning"],
+      impact: "LSTM / BiLSTM Forecasting",
       icon: Activity,
     },
     {
       title: "Stock Price Prediction System",
-      desc: "Interactive UI for stock price prediction with Temporal Fusion Transformer research.",
-      tech: ["Python", "TensorFlow", "ML", "Viz"],
-      impact: "Research-grade accuracy",
+      category: "Research & UI Project",
+      desc: "Interactive interface for stock price prediction & financial forecasting. Researched Temporal Fusion Transformers for forecasting accuracy evaluated via MSE, MAE, and R².",
+      tech: ["Python", "TensorFlow", "Machine Learning", "Data Visualization"],
+      impact: "MSE, MAE & R² Metrics",
       icon: LineChart,
     },
     {
       title: "Restaurant Management Website",
-      desc: "Full-stack restaurant management system with authentication, admin panel and email flows.",
-      tech: ["Django", "PostgreSQL", "Bootstrap"],
-      impact: "Production deployment",
+      category: "Minor Project",
+      desc: "Full-stack restaurant management system featuring user authentication, interactive admin panel, responsive Bootstrap UI, and automated email notifications.",
+      tech: ["Django", "PostgreSQL", "Bootstrap", "HTML", "CSS"],
+      impact: "Full-Stack Web System",
       icon: UtensilsCrossed,
+    },
+    {
+      title: "AI-Powered Insurance Invoice Detection",
+      category: "Production AI",
+      desc: "Invoice extraction system using YOLOv8 + OCR to capture VAT, premium, total amount, invoice number, date, and stamp duty.",
+      tech: ["YOLOv8", "OCR", "OpenCV", "Flask", "PyTorch"],
+      impact: "Document Extraction & Billing",
+      icon: FileSearch,
+    },
+    {
+      title: "AI-Powered Semantic Search Engine",
+      category: "Hybrid Search Engine",
+      desc: "Hybrid semantic search combining SentenceTransformers and FAISS with keyword + semantic ranking for intelligent retrieval.",
+      tech: ["FAISS", "NLP", "SentenceTransformers", "Python"],
+      impact: "SentenceTransformers + FAISS",
+      icon: Search,
+    },
+    {
+      title: "Multilingual AI Chatbot",
+      category: "RAG & NLP Research",
+      desc: "Multilingual chatbot supporting Nepali, Roman Nepali, and English with Retrieval-Augmented Generation (RAG) and backend APIs.",
+      tech: ["SentenceTransformers", "Flask", "FAISS", "NLP", "RAG"],
+      impact: "Nepali / Roman Nepali / English",
+      icon: MessagesSquare,
     },
   ];
 
   return (
-    <Section id="projects" eyebrow="Featured Projects" title={<>Selected <span className="text-gradient">AI work</span></>}>
+    <Section id="projects" eyebrow="Projects" title={<>Academic & Applied <span className="text-gradient">AI Projects</span></>}>
       <div className="grid gap-6 md:grid-cols-2">
         {projects.map((p) => {
           const Icon = p.icon;
@@ -407,12 +399,14 @@ function Projects() {
                   <div className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-primary/20 to-secondary/20 text-primary">
                     <Icon className="h-5 w-5" />
                   </div>
-                  <ExternalLink className="h-4 w-4 text-muted-foreground transition-colors group-hover:text-primary" />
+                  <span className="rounded-full border border-primary/20 bg-primary/10 px-3 py-1 font-mono text-xs text-primary font-medium">
+                    {p.category}
+                  </span>
                 </div>
                 <h3 className="mt-5 font-display text-xl font-semibold leading-tight">{p.title}</h3>
                 <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{p.desc}</p>
 
-                <div className="mt-4 inline-flex items-center gap-2 rounded-full bg-primary/10 px-3 py-1 text-xs font-medium text-primary">
+                <div className="mt-4 inline-flex items-center gap-2 rounded-full bg-secondary/10 px-3 py-1 text-xs font-medium text-secondary">
                   <Sparkles className="h-3 w-3" /> {p.impact}
                 </div>
 
@@ -434,41 +428,59 @@ function Projects() {
 
 /* ------------------------------ Experience ------------------------------- */
 function Experience() {
-  const items = [
-    { icon: FileSearch, title: "AI-Powered Invoice Extraction", desc: "Built end-to-end invoice detection and OCR pipeline used in production for insurance documents." },
-    { icon: Scan, title: "NOC Document OCR Extraction", desc: "Engineered structured data extraction from noisy scanned NOC documents." },
-    { icon: Gauge, title: "Fuel Pump Meter Reading", desc: "Designed real-time digit detection with image-enhancement preprocessing for glare resistance." },
-    { icon: Search, title: "Semantic Search Development", desc: "Implemented hybrid keyword + embedding retrieval using FAISS and SentenceTransformers." },
-    { icon: MessagesSquare, title: "Multilingual Chatbot Research", desc: "Researched RAG techniques across Nepali, Roman Nepali and English." },
-    { icon: Workflow, title: "Bill Reconciliation Automation", desc: "Automated bill matching workflows to reduce manual reconciliation effort." },
-    { icon: Bot, title: "WhatsApp Bulk Messaging Automation", desc: "Built scalable messaging automation for customer outreach." },
-    { icon: Camera, title: "Parking Number Plate Detection", desc: "Research on ANPR pipelines for parking management." },
+  const roles = [
+    {
+      role: "AI Engineer",
+      company: "Axis Software Company",
+      location: "Kathmandu, Nepal",
+      period: "August 2025 – Present",
+      bullets: [
+        "Developed AI-based systems for invoice detection, document extraction, billing verification, semantic search, chatbot development, and automation workflows.",
+        "Built computer vision and OCR solutions using YOLOv8, OpenCV, EasyOCR, PaddleOCR, CLAHE, and image preprocessing techniques.",
+        "Developed Flask APIs to serve AI models and provide structured outputs for backend integration.",
+        "Built a hybrid semantic search engine using SentenceTransformers and FAISS to improve search relevance.",
+        "Worked on multilingual chatbot development supporting Nepali, Roman Nepali, and English.",
+        "Developed React.js and Next.js interfaces for AI dashboards, extracted data, search results, and prediction outputs.",
+      ],
+    },
+    {
+      role: "AI Intern",
+      company: "Axis Software Company",
+      location: "Kathmandu, Nepal",
+      period: "January 2025 – April 2025",
+      bullets: [
+        "Learned the fundamentals of AI system development, computer vision, OCR, NLP, semantic search, RAG, and backend integration.",
+        "Practiced building AI workflows for document extraction, invoice detection, chatbot systems, and automation projects.",
+        "Gained hands-on experience with YOLOv8, OCR tools, SentenceTransformers, FAISS, Flask APIs, and Django-based AI applications.",
+      ],
+    },
   ];
 
   return (
-    <Section id="experience" eyebrow="Experience" title={<>Selected <span className="text-gradient">work highlights</span></>}>
-      <div className="relative mx-auto max-w-3xl">
-        <div className="absolute left-4 top-2 bottom-2 w-px bg-gradient-to-b from-primary/60 via-secondary/40 to-transparent md:left-1/2" />
-        <div className="space-y-8">
-          {items.map((it, idx) => {
-            const Icon = it.icon;
-            const left = idx % 2 === 0;
-            return (
-              <div key={it.title} className={`relative md:grid md:grid-cols-2 md:gap-10 ${left ? "" : "md:[&>*:first-child]:order-2"}`}>
-                <div className={`relative pl-12 md:pl-0 ${left ? "md:text-right md:pr-10" : "md:text-left md:pl-10"}`}>
-                  <span className="absolute left-0 top-1 grid h-8 w-8 place-items-center rounded-full bg-gradient-to-br from-primary to-secondary shadow-lg shadow-primary/30 md:left-1/2 md:-translate-x-1/2">
-                    <Icon className="h-4 w-4 text-primary-foreground" />
-                  </span>
-                  <div className="glass rounded-2xl p-5 transition-all hover:border-primary/40">
-                    <h3 className="font-display text-lg font-semibold">{it.title}</h3>
-                    <p className="mt-1 text-sm leading-relaxed text-muted-foreground">{it.desc}</p>
-                  </div>
-                </div>
-                <div className="hidden md:block" />
+    <Section id="experience" eyebrow="Experience" title={<>Professional <span className="text-gradient">Experience</span></>}>
+      <div className="mx-auto max-w-4xl space-y-8">
+        {roles.map((r) => (
+          <div key={r.role + r.period} className="glass group relative overflow-hidden rounded-2xl p-6 md:p-8 transition-all hover:border-primary/40">
+            <div className="absolute inset-x-0 -top-px h-px bg-gradient-to-r from-transparent via-primary/60 to-transparent opacity-0 transition-opacity group-hover:opacity-100" />
+            <div className="flex flex-col md:flex-row md:items-center justify-between gap-2 border-b border-white/10 pb-4 mb-4">
+              <div>
+                <h3 className="font-display text-2xl font-bold text-foreground">{r.role}</h3>
+                <p className="text-base font-semibold text-primary">{r.company} <span className="text-muted-foreground font-normal">· {r.location}</span></p>
               </div>
-            );
-          })}
-        </div>
+              <span className="inline-flex self-start md:self-auto rounded-full bg-primary/10 border border-primary/20 px-4 py-1.5 font-mono text-xs font-semibold text-primary">
+                {r.period}
+              </span>
+            </div>
+            <ul className="space-y-2.5 text-sm text-muted-foreground leading-relaxed">
+              {r.bullets.map((b, idx) => (
+                <li key={idx} className="flex items-start gap-3">
+                  <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-primary flex-shrink-0" />
+                  <span>{b}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
       </div>
     </Section>
   );
@@ -477,21 +489,35 @@ function Experience() {
 /* -------------------------------- Education ------------------------------ */
 function Education() {
   const items = [
-    { degree: "B.Sc. CSIT", school: "Ambition College", note: "Bachelor's in Computer Science & Information Technology" },
-    { degree: "+2 Science", school: "Golden Gate International College", note: "Higher Secondary Education" },
-    { degree: "SEE", school: "Little Garden English School", note: "Secondary Education Examination" },
+    {
+      degree: "Bachelor of Science in Computer Science and Information Technology — B.Sc. CSIT",
+      school: "Ambition College, Kathmandu, Nepal",
+      period: "2021 – 2025",
+    },
+    {
+      degree: "Higher Secondary Education, Science Stream (+2 Science)",
+      school: "Golden Gate International College, Kathmandu, Nepal",
+      period: "2018 – 2019",
+    },
+    {
+      degree: "Secondary Education Examination — SEE",
+      school: "Little Garden English School, Nepal",
+      period: "2017",
+    },
   ];
   return (
-    <Section id="education" eyebrow="Education" title={<>Academic <span className="text-gradient">journey</span></>}>
+    <Section id="education" eyebrow="Education" title={<>Academic <span className="text-gradient">Background</span></>}>
       <div className="grid gap-5 md:grid-cols-3">
         {items.map((e) => (
-          <div key={e.degree} className="glass group rounded-2xl p-6 transition-all hover:-translate-y-1 hover:border-primary/40">
-            <div className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-gradient-to-br from-primary/20 to-secondary/20 text-primary">
-              <GraduationCap className="h-5 w-5" />
+          <div key={e.degree} className="glass group rounded-2xl p-6 transition-all hover:-translate-y-1 hover:border-primary/40 flex flex-col justify-between">
+            <div>
+              <div className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-gradient-to-br from-primary/20 to-secondary/20 text-primary">
+                <GraduationCap className="h-5 w-5" />
+              </div>
+              <h3 className="mt-4 font-display text-base font-bold leading-snug">{e.degree}</h3>
+              <p className="mt-2 text-sm font-medium text-foreground/85">{e.school}</p>
             </div>
-            <h3 className="mt-4 font-display text-lg font-semibold">{e.degree}</h3>
-            <p className="mt-1 text-sm font-medium text-foreground/85">{e.school}</p>
-            <p className="mt-2 text-sm text-muted-foreground">{e.note}</p>
+            <p className="mt-4 font-mono text-xs font-semibold text-primary">{e.period}</p>
           </div>
         ))}
       </div>
